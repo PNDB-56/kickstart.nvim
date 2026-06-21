@@ -110,8 +110,11 @@ do
   vim.o.number = true
   -- You can also add relative line numbers, to help with jumping.
   --  Experiment for yourself to see if you like it!
-  -- vim.o.relativenumber = true
-
+  vim.o.relativenumber = true
+  vim.opt.tabstop = 4 -- Number of spaces a <Tab> in the file counts for
+  vim.opt.softtabstop = 4 -- Number of spaces a <Tab> counts for while editing
+  vim.opt.shiftwidth = 4 -- Number of spaces to use for each step of (auto)indent
+  vim.opt.expandtab = true -- Convert tabs to spaces
   -- Enable mouse mode, can be useful for resizing splits for example!
   vim.o.mouse = 'a'
 
@@ -693,7 +696,8 @@ do
   ---@type table<string, vim.lsp.Config>
   local servers = {
     -- clangd = {},
-    -- gopls = {},
+    gopls = {},
+    ts_ls = {},
     -- pyright = {},
     -- rust_analyzer = {},
     --
